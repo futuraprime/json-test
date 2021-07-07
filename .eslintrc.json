@@ -1,0 +1,68 @@
+{
+  "extends": ["airbnb-base"],
+  "plugins": ["compat", "svelte3"],
+  "rules": {
+    "compat/compat": 2,
+    "no-restricted-syntax": 0,
+    "no-mixed-operators": [
+      0,
+      {
+        "groups": [
+          ["&", "|", "^", "~", "<<", ">>", ">>>"],
+          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+          ["&&", "||"],
+          ["in", "instanceof"]
+        ]
+      }
+    ],
+    "no-nested-ternary": 0,
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    "spaced-comment": [2, "always", { "exceptions": ["/"] }],
+    "no-cond-assign": [2, "except-parens"],
+    "no-shadow": [2, { "allow": ["memo"] }],
+    "no-param-reassign": 0,
+    "no-confusing-arrow": 0,
+    "no-underscore-dangle": [
+      2,
+      {
+        "allow": [
+          "_scale",
+          "_accessor",
+          "__PRELOADED_STATE__",
+          "__ISBUILT__",
+          "__REDUX_DEVTOOLS_EXTENSION__"
+        ]
+      }
+    ],
+    "no-unused-expressions": [
+      2,
+      { "allowShortCircuit": true, "allowTernary": true }
+    ],
+    "class-methods-use-this": 0,
+    "no-prototype-builtins": 0,
+    "import/no-extraneous-dependencies": [
+      2,
+      {
+        "devDependencies": ["**/*config*.js", "./build.js"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3",
+      "rules": {
+        "import/first": [0],
+        "import/no-extraneous-dependencies": [0],
+        "import/no-duplicates": [0],
+        "import/no-unresolved": [0],
+        "import/no-mutable-exports": [0],
+        "no-return-assign": [0]
+      }
+    }
+  ],
+  "env": {
+    "es6": true,
+    "browser": true
+  }
+}

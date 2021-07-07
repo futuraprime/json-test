@@ -1,0 +1,47 @@
+{
+  "name": "json-test",
+  "version": "1.0.0",
+  "description": "A demo of a broken configuration",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:futuraprime/json-test.git"
+  },
+  "scripts": {
+    "generate:entries": "rimraf entries && rimraf htmls && node scripts/generate-entries.js",
+    "start": "npm run generate:entries && snowpack dev",
+    "build": "npm run generate:entries && snowpack build"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-optimize": "^0.2.13",
+    "@snowpack/plugin-postcss": "^1.1.0",
+    "@snowpack/plugin-svelte": "^3.7.0",
+    "@snowpack/plugin-webpack": "^2.3.1",
+    "ejs": "^3.1.6",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-compat": "^3.9.0",
+    "eslint-plugin-svelte3": "^3.1.1",
+    "lodash": "^4.17.21",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "postcss-nested": "^5.0.3",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "snowpack": "^3.7.1"
+  },
+  "dependencies": {
+    "d3-array": "^2.8.0",
+    "d3-dsv": "^2.0.0",
+    "d3-fetch": "^2.0.0",
+    "d3-format": "^2.0.0",
+    "d3-scale": "^3.2.3",
+    "d3-selection": "^2.0.0",
+    "d3-time-format": "^3.0.0",
+    "reset-css": "^5.0.1",
+    "svelte": "^3.38.3",
+    "svelte-observe-resize": "^1.0.1",
+    "svelte-select": "^4.2.0"
+  }
+}
